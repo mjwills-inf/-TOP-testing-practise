@@ -1,6 +1,7 @@
 import capitalise from './capitalise'
 import reverseString from './reverseString'
 import calculate from './calculate'
+import caesar from './caesar'
 import arrayAnalysis from './arrayAnalysis'
 
 
@@ -31,7 +32,22 @@ test('multiplcation in calculate', () => {
   expect(calculate.multiply(70, 7, 2)).toBe(980)
 })
 
-// Caesar
+// Caesar Shift
+test('caeser shift', () => {
+  expect(caesar('abc', 3)).toBe('def')
+})
+
+test('caeser shift uppercase', () => {
+  expect(caesar('AbC', 3)).toBe('DeF')
+})
+
+test('caeser shift wrap', () => {
+  expect(caesar('abx', 3)).toBe('dea')
+})
+
+test('caeser shift punctuation', () => {
+  expect(caesar('a, bc! Z', 3)).toBe('d, ef! C')
+})
 
 
 // Array Analysis
